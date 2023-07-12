@@ -102,6 +102,15 @@ module sonic-portchannel {
                     type stypes:tpid_type;
                 }
 
+                leaf fallback {
+                    description "Enable LACP fallback feature";
+                    type stypes:boolean_type;
+                }
+                leaf fast_rate {
+                    description "Enable LACP fast rate";
+                    type stypes:boolean_type;
+                }
+
             } /* end of list PORTCHANNEL_LIST */
 
         } /* end of container PORTCHANNEL */
@@ -172,6 +181,13 @@ module sonic-portchannel {
 				enum disable;
 			}
 		}
+
+		leaf ipv6_use_link_local_only {
+			description "Enable/Disable IPv6 link local address on portchannel interface";
+			type stypes:mode-status;
+			default disable;
+		}
+
             } /* end of list PORTCHANNEL_INTERFACE_LIST */
 
             list PORTCHANNEL_INTERFACE_IPPREFIX_LIST {
